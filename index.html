@@ -1488,30 +1488,15 @@
         // AUTHENTICATION
         // ─────────────────────────────────────────────
         function toggleAuthTab(tab) {
-            const btnLogin = document.getElementById('tab-btn-login');
-            const btnRegister = document.getElementById('tab-btn-register');
-            const formLogin = document.getElementById('form-login');
-            const formRegister = document.getElementById('form-register');
-            if (tab === 'login') {
-                btnLogin.className =
-                    "flex-1 py-4 text-center font-semibold text-sm border-b-2 border-emerald-600 text-emerald-600 transition-all";
-                btnRegister.className =
-                    "flex-1 py-4 text-center font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-all";
+                // Paksa agar selalu mengarah ke tab login saja
+                const btnLogin = document.getElementById('tab-btn-login');
+                const formLogin = document.getElementById('form-login');
+                const formRegister = document.getElementById('form-register');
+                
+                btnLogin.className = "w-full py-4 text-center font-semibold text-sm border-b-2 border-emerald-600 text-emerald-600 transition-all";
                 formLogin.classList.remove('hidden');
                 formRegister.classList.add('hidden');
-            } else {
-                btnRegister.className =
-                    "flex-1 py-4 text-center font-semibold text-sm border-b-2 border-emerald-600 text-emerald-600 transition-all";
-                btnLogin.className =
-                    "flex-1 py-4 text-center font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-all";
-                formRegister.classList.remove('hidden');
-                formLogin.classList.add('hidden');
             }
-            
-            if (typeof lucide !== 'undefined' && lucide.createIcons) {
-                lucide.createIcons();
-            }
-        }
 
         function showAuthWrapper() {
             document.getElementById('auth-container').classList.remove('hidden');
