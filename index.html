@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Tailwind CSS (Dihilangkan 'defer' agar desain langsung diaplikasikan sebelum halaman dirender) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Lucide Icons -->
@@ -86,7 +86,7 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden">
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden text-sm">
 
     <!-- TOAST NOTIFICATION -->
     <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 max-w-sm w-full px-4 sm:px-0"></div>
@@ -111,14 +111,14 @@
     <!-- ===== AUTH WRAPPER ===== -->
     <div id="auth-container" class="flex-1 flex items-center justify-center p-4 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
         <div id="auth-card" class="bg-white w-full max-w-md rounded-2xl shadow-xl overflow-hidden border border-slate-100 transition-all duration-500">
-            <!-- Header Brand (Kini diubah ke Hijau Tua Emerald sesuai dengan panah penunjuk Anda) -->
+            <!-- Header Brand -->
             <div class="p-8 text-center bg-gradient-to-br from-emerald-950 to-emerald-800 text-white relative">
                 <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-600/30 via-transparent to-transparent"></div>
                 <div class="inline-flex p-3 bg-white/10 backdrop-blur-md rounded-2xl mb-3 border border-white/20">
                     <i data-lucide="wallet-cards" class="w-8 h-8 text-emerald-400"></i>
                 </div>
                 <h1 class="text-2xl font-bold tracking-tight">Koperasi Mandiri</h1>
-                <p class="text-xs text-emerald-200 mt-1 uppercase tracking-widest font-semibold">Manajemen Penjualan Digital</p>
+                <p class="text-xs text-emerald-200 mt-1 uppercase tracking-widest font-semibold">Manajemen Penjualan Koperasi</p>
             </div>
 
             <!-- TAB -->
@@ -133,7 +133,7 @@
                     <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Username</label>
                     <div class="relative">
                         <i data-lucide="user" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                        <input type="text" id="login-username" placeholder="Masukkan username..." class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all" />
+                        <input type="text" id="login-username" placeholder="Masukkan username..." class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-semibold" />
                     </div>
                 </div>
                 <div>
@@ -194,7 +194,7 @@
                     </div>
                     <div>
                         <h2 class="font-bold text-white text-base">Koperasi Mandiri</h2>
-                        <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase">Customer Digital</span>
+                        <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase">Portal Digital</span>
                     </div>
                 </div>
                 <div class="mt-6 p-4 rounded-xl bg-slate-800/50 border border-slate-800/80 flex items-center gap-3">
@@ -234,7 +234,7 @@
                         <span>Belanja Anggota</span>
                     </button>
                     <button onclick="showPage('lihat-stok')" id="nav-lihat-stok" class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">
-                        <i data-lucide="search-code" class="w-5 h-5"></i>
+                        <i data-lucide="search" class="w-5 h-5"></i>
                         <span>Stok Barang</span>
                     </button>
                     <button onclick="showPage('usulan')" id="nav-usulan" class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">
@@ -254,7 +254,7 @@
 
         <!-- MAIN CONTENT -->
         <div class="flex-1 flex flex-col min-w-0">
-            <!-- NAVBAR HEADER (Diperbarui dengan latar belakang hijau tua premium bg-emerald-900) -->
+            <!-- NAVBAR HEADER -->
             <header class="bg-emerald-900 border-b border-emerald-800 h-16 flex items-center justify-between px-6 sticky top-0 z-30 shadow-md">
                 <div class="flex items-center gap-4">
                     <button onclick="toggleSidebar(true)" class="md:hidden p-2 hover:bg-emerald-800 rounded-lg text-emerald-100">
@@ -263,25 +263,26 @@
                     <h2 id="page-title" class="text-lg font-bold text-white tracking-tight">Dashboard</h2>
                 </div>
                 <div class="flex items-center gap-3">
-                    <button id="cart-trigger-btn" onclick="toggleCartMobile(true)" class="relative p-2.5 bg-emerald-800 hover:bg-emerald-700 rounded-xl text-emerald-100 transition-all flex border border-emerald-800">
+                    <button id="cart-trigger-btn" onclick="toggleCartMobile(true)" class="relative p-2.5 bg-emerald-800 hover:bg-emerald-700 rounded-xl text-emerald-100 transition-all flex border border-emerald-800 text-xs">
                         <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                         <span id="cart-badge" class="hidden absolute -top-1.5 -right-1.5 bg-blue-600 text-white text-[10px] font-extrabold w-5 h-5 items-center justify-center rounded-full animate-bounce">0</span>
                     </button>
                 </div>
             </header>
 
-            <main class="flex-1 p-6 overflow-y-auto max-w-[1600px] w-full mx-auto space-y-6">
+            <main class="flex-grow p-6 overflow-y-auto max-w-[1600px] w-full mx-auto space-y-6">
 
                 <!-- PAGE DASHBOARD -->
                 <section id="page-dashboard" class="page-content space-y-6 page-transition">
                     <div class="bg-gradient-to-br from-slate-950 to-slate-800 text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden border border-slate-800">
-                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/30 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-600/30 via-transparent to-transparent"></div>
                         <div class="relative z-10 space-y-2">
                             <h3 class="text-xl sm:text-2xl font-bold tracking-tight">Selamat Datang, <span id="welcome-user">Nama User</span>! 👋</h3>
                             <p class="text-sm text-slate-300 max-w-lg">Pantau, ajukan usulan barang, kelola inventori koperasi dengan mudah, transparan, dan terintegrasi secara digital.</p>
                         </div>
                     </div>
 
+                    <!-- RINGKASAN STATISTIK -->
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                         <div class="bg-white p-5 rounded-2xl border border-slate-150 shadow-sm flex items-center gap-4">
                             <div class="p-3 bg-blue-50 rounded-xl text-blue-600"><i data-lucide="box" class="w-6 h-6"></i></div>
@@ -313,16 +314,18 @@
                         </div>
                     </div>
 
+                    <!-- KONTEN DETIL DASHBOARD (UMUM & ADMIN) -->
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Menu Pintasan Cepat -->
                         <div class="lg:col-span-1 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-                            <h3 class="font-bold text-slate-900 flex items-center gap-2"><i data-lucide="Zap" class="w-5 h-5 text-amber-500"></i> Pintasan Cepat</h3>
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5 text-amber-500"></i> Pintasan Cepat</h3>
                             <div class="grid grid-cols-1 gap-2.5">
                                 <button onclick="showPage('pesan')" class="w-full p-4 bg-slate-50 hover:bg-slate-100/80 rounded-xl text-left border border-slate-150 transition-all flex items-center justify-between group">
                                     <div class="flex items-center gap-3">
                                         <div class="p-2 bg-blue-100 rounded-lg text-blue-600"><i data-lucide="shopping-bag" class="w-4 h-4"></i></div>
                                         <div>
                                             <p class="text-sm font-bold">Mulai Belanja</p>
-                                            <p class="text-[11px] text-slate-400">Pesan logistik koperasi</p>
+                                            <p class="text-xs text-slate-400">Pesan logistik koperasi</p>
                                         </div>
                                     </div>
                                     <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-all"></i>
@@ -332,7 +335,7 @@
                                         <div class="p-2 bg-purple-100 rounded-lg text-purple-600"><i data-lucide="message-square" class="w-4 h-4"></i></div>
                                         <div>
                                             <p class="text-sm font-bold">Usulkan Barang Baru</p>
-                                            <p class="text-[11px] text-slate-400">Minta stok barang baru</p>
+                                            <p class="text-xs text-slate-400">Minta stok barang baru</p>
                                         </div>
                                     </div>
                                     <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-all"></i>
@@ -340,10 +343,64 @@
                             </div>
                         </div>
 
+                        <!-- Perhatian Penting & Stok Tipis -->
                         <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
-                            <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-4"><i data-lucide="activity" class="w-5 h-5 text-red-500"></i> Perhatian Pentok</h3>
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-4"><i data-lucide="activity" class="w-5 h-5 text-red-500"></i> Perhatian Penting</h3>
                             <div id="dashboard-stock-warnings" class="flex-1 overflow-y-auto max-h-[220px] space-y-3 pr-2">
                                 <p class="text-xs text-slate-400 text-center py-6">Memuat statistik barang...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== SEKSI KHUSUS ADMIN (REKAP DATA ANGGOTA & BELANJA) ===== -->
+                    <div id="dashboard-admin-section" class="hidden space-y-6">
+                        <div class="h-px bg-slate-200 my-6"></div>
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2"><i data-lucide="shield-check" class="w-6 h-6 text-emerald-600"></i> Konsol Rekapitulasi Administrator</h3>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <!-- Tabel Semua Anggota Koperasi -->
+                            <div class="lg:col-span-1 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h4 class="font-bold text-slate-900 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-indigo-500"></i> Roster Anggota</h4>
+                                    <span id="admin-member-count" class="px-2.5 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg">0 Orang</span>
+                                </div>
+                                <div class="flex-1 overflow-y-auto max-h-[350px] pr-1">
+                                    <table class="w-full text-left text-xs border-collapse">
+                                        <thead class="bg-slate-50 border-b border-slate-100 text-slate-400 uppercase font-bold sticky top-0 z-10">
+                                            <tr>
+                                                <th class="py-2.5 px-3">Nama</th>
+                                                <th class="py-2.5 px-3">Username</th>
+                                                <th class="py-2.5 px-3 text-center">Peran</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-roster-anggota" class="divide-y divide-slate-100 text-slate-600">
+                                            <tr><td colspan="3" class="py-10 text-center text-slate-400">Memuat data anggota...</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Tabel Rekap Belanja Semua Anggota -->
+                            <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h4 class="font-bold text-slate-900 flex items-center gap-2"><i data-lucide="receipt" class="w-5 h-5 text-emerald-500"></i> Rekap Belanja Anggota</h4>
+                                    <span id="admin-orders-count" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-lg">0 Transaksi</span>
+                                </div>
+                                <div class="flex-1 overflow-y-auto max-h-[350px] pr-1">
+                                    <table class="w-full text-left text-xs border-collapse">
+                                        <thead class="bg-slate-50 border-b border-slate-100 text-slate-400 uppercase font-bold sticky top-0 z-10">
+                                            <tr>
+                                                <th class="py-2.5 px-3">Tanggal</th>
+                                                <th class="py-2.5 px-3">Pemesan</th>
+                                                <th class="py-2.5 px-3">Belanjaan</th>
+                                                <th class="py-2.5 px-3 text-right">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-rekap-belanja" class="divide-y divide-slate-100 text-slate-600">
+                                            <tr><td colspan="4" class="py-10 text-center text-slate-400">Memuat rekap transaksi...</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -544,7 +601,7 @@
                             </div>
                         </div>
 
-                        <!-- Kelola Kategori Produk Card (Fitur Baru: Tambah Kategori Manual) -->
+                        <!-- Kelola Kategori Produk Card -->
                         <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
                             <div class="border-b pb-4">
                                 <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
@@ -619,7 +676,6 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-500 mb-2 uppercase">Kategori</label>
-                    <!-- Kategori sekarang dimuat secara dinamis melalui JavaScript -->
                     <select id="barang-kategori" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-all"></select>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
@@ -668,48 +724,87 @@
         // 1. KONFIGURASI & STATE
         // ─────────────────────────────────────────────
 
-        const DEFAULT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw0GAi9njXU_Ja3ObXBWWTxkTmKw8xmGzHjM-Aa7Mrb-eI0rPuhWWxbLdKv_-nYy0vQSQ/exec";
+        const HARDCODED_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbygY7PZMFVbpDAqKYESNYSfGrC07DjjYagm_G8HIdtlSMTAuM6IZufooRxWDSJuj-Lf/exec";
         const CACHE_TTL = 60000; // 1 menit
         const DEBOUNCE_DELAY = 200;
 
         let MOCK_DATA_BARANG = [
-            { id: "BRG-1", nama: "Beras Premium Cianjur 5kg", kategori: "Sembako", harga: 72000, stok: 20 },
-            { id: "BRG-2", nama: "Minyak Goreng Sunco 2L", kategori: "Sembako", harga: 36500, stok: 8 },
-            { id: "BRG-3", nama: "Buku Tulis Kiky A5", kategori: "ATK", harga: 4200, stok: 60 },
-            { id: "BRG-4", nama: "Susu Kaleng Frisian Flag", kategori: "Makanan/Minuman", harga: 14500, stok: 15 },
-            { id: "BRG-5", nama: "Pulpen Standard AE7 Hitam", kategori: "ATK", harga: 2500, stok: 120 },
-            { id: "BRG-6", nama: "Garam Dapur Cap Kapal 250g", kategori: "Sembako", harga: 3000, stok: 0 }
+            { id: "BRG-1", nama: "Beras Premium 5kg", kategori: "Sembako", harga: 68000, stok: 25 },
+            { id: "BRG-2", nama: "Minyak Goreng 2L", kategori: "Sembako", harga: 34000, stok: 8 },
+            { id: "BRG-3", nama: "Buku Tulis Kiky A5", kategori: "ATK", harga: 4500, stok: 50 },
+            { id: "BRG-4", nama: "Pulpen Standard AE7", kategori: "ATK", harga: 2500, stok: 100 },
+            { id: "BRG-5", nama: "Gula Pasir 1kg", kategori: "Sembako", harga: 16000, stok: 0 }
         ];
         let MOCK_USULAN = [
-            { tanggal: new Date().toISOString(), user: "budi", nama: "Indomie Goreng Spasial", keterangan: "Sangat diminati para keluarga koperasi",
-                status: "Pending" }
+            { tanggal: new Date().toISOString(), user: "budi", nama: "Susu UHT Cokelat 1L", keterangan: "Banyak dicari oleh anggota keluarga koperasi", status: "Pending" }
         ];
         let MOCK_USERS = [
             { nama: "Admin Koperasi", username: "admin", role: "admin" },
             { nama: "Budi Raharjo", username: "budi", role: "user" }
         ];
+
         let MOCK_PESANAN = [
-            { tanggal: new Date().toISOString(), user: "budi", detail: "Minyak Goreng Sunco 2L (x1)", total: 36500 }
+            { tanggal: new Date().toISOString(), user: "budi", detail: "Beras Premium 5kg (x1), Pulpen Standard AE7 (x2)", total: 73000 }
         ];
 
-        let globalBarang = [];
-        let globalUsulan = [];
-        let globalPesanan = [];
-        let globalTotalAnggota = 0;
-        let cart = [];
+        let globalBarang = [...MOCK_DATA_BARANG];
+        let globalPesanan = [...MOCK_PESANAN];
+        let globalAspirasi = [...MOCK_USULAN];
+        let globalPengguna = [...MOCK_USERS];
+        let globalTotalAnggota = MOCK_USERS.length;
         let activeUser = null;
+        let cart = [];
         let selectedCategory = 'Semua';
 
-        // Load Kategori dari Local Storage atau fallback ke default
-        let globalKategori = JSON.parse(localStorage.getItem('koperasi_categories')) || ['Sembako', 'Makanan/Minuman', 'ATK', 'BRM', 'Lain-lain'];
+        // Ambil URL default atau override
+        let WEBAPP_URL = localStorage.getItem('gas_webapp_url') || HARDCODED_WEBAPP_URL;
+        if (WEBAPP_URL.includes("AKfycbw0GAi9njXU")) {
+            // Default check passes
+        }
 
+        window.onload = function() {
+            lucide.createIcons();
+            loadSettingsUI();
+            checkSession();
+            loadLocalData();
+            
+            if (WEBAPP_URL) {
+                fetchCloudData();
+            } else {
+                renderAll();
+            }
+        };
+
+        // 2. CACHING & LOCAL STORAGE
+        function saveLocalData() {
+            localStorage.setItem('local_global_barang', JSON.stringify(globalBarang));
+            localStorage.setItem('local_global_pesanan', JSON.stringify(globalPesanan));
+            localStorage.setItem('local_global_aspirasi', JSON.stringify(globalAspirasi));
+            localStorage.setItem('local_global_pengguna', JSON.stringify(globalPengguna));
+        }
+
+        function loadLocalData() {
+            const b = localStorage.getItem('local_global_barang');
+            const p = localStorage.getItem('local_global_pesanan');
+            const a = localStorage.getItem('local_global_aspirasi');
+            const u = localStorage.getItem('local_global_pengguna');
+
+            if (b) globalBarang = JSON.parse(b);
+            if (p) globalPesanan = JSON.parse(p);
+            if (a) globalAspirasi = JSON.parse(a);
+            if (u) {
+                globalPengguna = JSON.parse(u);
+                globalTotalAnggota = globalPengguna.length;
+            }
+        }
+
+        // Kategori terdaftar kustom
+        let globalKategori = JSON.parse(localStorage.getItem('koperasi_categories')) || ['Sembako', 'Makanan/Minuman', 'ATK', 'Lain-lain'];
         let WA_ADMIN = localStorage.getItem('wa_admin') || "6285123456789";
-        let WEBAPP_URL = localStorage.getItem('webapp_url') || DEFAULT_WEBAPP_URL;
 
         // ─────────────────────────────────────────────
-        // 2. CACHE LAYER
+        // CACHE LAYER
         // ─────────────────────────────────────────────
-
         function getCached(key) {
             try {
                 const raw = sessionStorage.getItem('cache_' + key);
@@ -720,23 +815,20 @@
             } catch { return null; }
         }
 
-        // Simpan data ke cache dengan timestamp
         function setCached(key, value) {
             try {
                 sessionStorage.setItem('cache_' + key, JSON.stringify({ timestamp: Date.now(), value }));
             } catch { /* ignore */ }
         }
 
-        // Hapus cache yang diawali dengan 'cache_'
         function clearCache() {
             const keys = Object.keys(sessionStorage);
             keys.forEach(k => { if (k.startsWith('cache_')) sessionStorage.removeItem(k); });
         }
 
         // ─────────────────────────────────────────────
-        // 3. DEBOUNCE UTILITY
+        // DEBOUNCE UTILITY
         // ─────────────────────────────────────────────
-
         function debounce(fn, delay) {
             let timer = null;
             return function(...args) {
@@ -746,9 +838,8 @@
         }
 
         // ─────────────────────────────────────────────
-        // 4. TOAST SYSTEM
+        // TOAST SYSTEM
         // ─────────────────────────────────────────────
-
         function showToast(title, message, type = 'info') {
             const container = document.getElementById('toast-container');
             let colorClasses = 'border-blue-100 bg-white',
@@ -795,7 +886,6 @@
             }, 4000);
         }
 
-        // Efek visual getar di form auth ketika terjadi error
         function triggerAuthShake() {
             const card = document.getElementById('auth-card');
             if (card) {
@@ -807,51 +897,48 @@
         }
 
         // ─────────────────────────────────────────────
-        // 5. LOADER
+        // LOADER
         // ─────────────────────────────────────────────
-
         function setLoader(show, text = "Memuat...") {
             const loader = document.getElementById('loader');
             document.getElementById('loader-text').innerText = text;
-            if (show) { loader.classList.remove('hidden');
-                loader.classList.add('flex'); } else { loader.classList.add('hidden');
-                loader.classList.remove('flex'); }
+            if (show) { 
+                loader.classList.remove('hidden');
+                loader.classList.add('flex'); 
+            } else { 
+                loader.classList.add('hidden');
+                loader.classList.remove('flex'); 
+            }
         }
 
         // ─────────────────────────────────────────────
-        // 6. FORMAT RUPIAH
+        // FORMAT RUPIAH
         // ─────────────────────────────────────────────
-
         function formatRupiah(number) {
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 })
                 .format(number);
         }
 
         // ─────────────────────────────────────────────
-        // 7. FETCH DATA (PARALEL + CACHE)
+        // FETCH DATA
         // ─────────────────────────────────────────────
-
-        async function fetchData(force = false) {
+        async function fetchCloudData(force = false) {
             if (!WEBAPP_URL) {
-                globalBarang = [...MOCK_DATA_BARANG];
-                globalUsulan = [...MOCK_USULAN];
-                globalPesanan = [...MOCK_PESANAN];
-                globalTotalAnggota = MOCK_USERS.length;
+                loadLocalData();
                 updateAllUIs();
                 toggleDemoModeBanner(true);
                 return;
             }
 
-            // Coba ambil dari cache (kecuali force)
             if (!force) {
                 const cached = getCached('allData');
                 if (cached) {
                     globalBarang = cached.barang || [];
-                    globalUsulan = cached.usulan || [];
+                    globalAspirasi = cached.usulan || [];
                     globalPesanan = cached.pesanan || [];
                     globalTotalAnggota = cached.totalAnggota || 0;
+                    globalPengguna = cached.pengguna || [];
                     updateAllUIs();
-                    // tetap refresh di background
                     refreshDataInBackground();
                     return;
                 }
@@ -859,35 +946,35 @@
 
             setLoader(true, "Mengambil data dari database...");
             try {
-                // Paralelkan semua request
                 const [resBarang, resUsulan, resPesanan, resUsers] = await Promise.all([
                     fetch(`${WEBAPP_URL}`).then(r => r.json()).catch(() => null),
                     fetch(`${WEBAPP_URL}?action=getUsulan`).then(r => r.json()).catch(() => null),
                     fetch(`${WEBAPP_URL}?action=getPesanan`).then(r => r.json()).catch(() => null),
-                    fetch(`${WEBAPP_URL}?action=getUsersCount`).then(r => r.json()).catch(() => null)
+                    fetch(`${WEBAPP_URL}?action=getUsers`).then(r => r.json()).catch(() => null)
                 ]);
 
                 if (Array.isArray(resBarang)) globalBarang = resBarang;
-                if (Array.isArray(resUsulan)) globalUsulan = resUsulan;
+                if (Array.isArray(resUsulan)) globalAspirasi = resUsulan;
                 if (Array.isArray(resPesanan)) globalPesanan = resPesanan;
-                if (resUsers && typeof resUsers.count === 'number') globalTotalAnggota = resUsers.count;
+                if (Array.isArray(resUsers)) {
+                    globalPengguna = resUsers;
+                    globalTotalAnggota = globalPengguna.length;
+                }
 
-                // Simpan ke cache
                 setCached('allData', {
                     barang: globalBarang,
-                    usulan: globalUsulan,
+                    usulan: globalAspirasi,
                     pesanan: globalPesanan,
-                    totalAnggota: globalTotalAnggota
+                    totalAnggota: globalTotalAnggota,
+                    pengguna: globalPengguna
                 });
 
+                saveLocalData();
                 updateAllUIs();
                 toggleDemoModeBanner(false);
             } catch (e) {
                 showToast("Koneksi Gagal", "Gagal menghubungi API. Mode Demo aktif.", "warning");
-                globalBarang = [...MOCK_DATA_BARANG];
-                globalUsulan = [...MOCK_USULAN];
-                globalPesanan = [...MOCK_PESANAN];
-                globalTotalAnggota = MOCK_USERS.length;
+                loadLocalData();
                 updateAllUIs();
                 toggleDemoModeBanner(true);
             } finally {
@@ -895,9 +982,7 @@
             }
         }
 
-        // Refresh data di background tanpa mengganggu UI
         let refreshTimer = null;
-
         function refreshDataInBackground() {
             if (refreshTimer) return;
             refreshTimer = setTimeout(async () => {
@@ -907,32 +992,30 @@
                         fetch(`${WEBAPP_URL}`).then(r => r.json()).catch(() => null),
                         fetch(`${WEBAPP_URL}?action=getUsulan`).then(r => r.json()).catch(() => null),
                         fetch(`${WEBAPP_URL}?action=getPesanan`).then(r => r.json()).catch(() => null),
-                        fetch(`${WEBAPP_URL}?action=getUsersCount`).then(r => r.json()).catch(() => null)
+                        fetch(`${WEBAPP_URL}?action=getUsers`).then(r => r.json()).catch(() => null)
                     ]);
                     let changed = false;
-                    if (Array.isArray(resBarang)) { globalBarang = resBarang;
-                        changed = true; }
-                    if (Array.isArray(resUsulan)) { globalUsulan = resUsulan;
-                        changed = true; }
-                    if (Array.isArray(resPesanan)) { globalPesanan = resPesanan;
-                        changed = true; }
-                    if (resUsers && typeof resUsers.count === 'number') { globalTotalAnggota = resUsers.count;
-                        changed = true; }
+                    if (Array.isArray(resBarang)) { globalBarang = resBarang; changed = true; }
+                    if (Array.isArray(resUsulan)) { globalAspirasi = resUsulan; changed = true; }
+                    if (Array.isArray(resPesanan)) { globalPesanan = resPesanan; changed = true; }
+                    if (Array.isArray(resUsers)) {
+                        globalPengguna = resUsers;
+                        globalTotalAnggota = globalPengguna.length;
+                        changed = true;
+                    }
                     if (changed) {
-                        setCached('allData', { barang: globalBarang, usulan: globalUsulan, pesanan: globalPesanan,
-                            totalAnggota: globalTotalAnggota });
+                        setCached('allData', { barang: globalBarang, usulan: globalAspirasi, pesanan: globalPesanan, totalAnggota: globalTotalAnggota, pengguna: globalPengguna });
+                        saveLocalData();
                         updateAllUIs();
                     }
                 } catch { /* silent fail */ }
-            }, 3000);
+            }, 10000);
         }
 
         // ─────────────────────────────────────────────
-        // 8. UPDATE UI (HANYA YANG TERLIHAT)
+        // UPDATE UI
         // ─────────────────────────────────────────────
-
         let updateScheduled = false;
-
         function updateAllUIs() {
             if (updateScheduled) return;
             updateScheduled = true;
@@ -944,19 +1027,19 @@
                 renderViewerItems();
                 renderUsulanTable();
                 renderCart();
+                renderAdminDashboardRoster(); 
                 if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
             });
         }
 
         // ─────────────────────────────────────────────
-        // 9. DASHBOARD STATS
+        // RENDER STATS & ADMIN ROSTER & REKAP BELANJA
         // ─────────────────────────────────────────────
-
         function renderDashboardStats() {
             const totalBarang = globalBarang.length;
             const stokTipis = globalBarang.filter(b => b.stok < 10).length;
             const totalJual = globalPesanan.reduce((acc, curr) => acc + (Number(curr.total) || 0), 0);
-            const totalAnggota = WEBAPP_URL ? globalTotalAnggota : MOCK_USERS.length;
+            const totalAnggota = globalTotalAnggota;
 
             document.getElementById('stat-total-barang').innerText = totalBarang;
             document.getElementById('stat-stok-tipis').innerText = stokTipis;
@@ -973,18 +1056,71 @@
                 container.innerHTML = lowStock.map(b => {
                     const isHabis = b.stok === 0;
                     return `<div class="flex items-center justify-between p-3 border rounded-xl text-xs ${isHabis ? 'border-rose-100 bg-rose-50/50 text-rose-800' : 'border-amber-100 bg-amber-50/50 text-amber-800'}">
-                        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full ${isHabis ? 'bg-rose-500' : 'bg-amber-500'}"></span>
-                        <span class="font-bold">${b.nama}</span></div>
-                        <span class="font-extrabold">${isHabis ? 'Habis (0)' : 'Hampir Habis ('+ b.stok +')'}</span>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full ${isHabis ? 'bg-rose-500' : 'bg-amber-500'}"></span>
+                            <span class="font-bold">${b.nama}</span>
+                        </div>
+                        <span class="font-mono text-xs font-bold">${isHabis ? 'HABIS' : 'Sisa ' + b.stok}</span>
                     </div>`;
                 }).join('');
             }
         }
 
-        // ─────────────────────────────────────────────
-        // 10. ADMIN BARANG (dengan debounce)
-        // ─────────────────────────────────────────────
+        function renderAdminDashboardRoster() {
+            if (!activeUser || activeUser.role !== 'admin') {
+                document.getElementById('admin-menu').classList.add('hidden');
+                document.getElementById('dashboard-admin-section').classList.add('hidden');
+                return;
+            }
+            document.getElementById('admin-menu').classList.remove('hidden');
+            document.getElementById('dashboard-admin-section').classList.remove('hidden');
 
+            // 1. Tampilkan data tabel Roster Anggota di Dashboard Admin
+            const dashboardRosterEl = document.getElementById('admin-roster-anggota');
+            if (dashboardRosterEl) {
+                document.getElementById('admin-member-count').innerText = `${globalPengguna.length} Orang`;
+                if (globalPengguna.length === 0) {
+                    dashboardRosterEl.innerHTML = `<tr><td colspan="3" class="py-10 text-center text-slate-400">Tidak ada anggota terdaftar.</td></tr>`;
+                } else {
+                    dashboardRosterEl.innerHTML = globalPengguna.map(u => `
+                        <tr class="hover:bg-slate-50 transition-colors border-b border-slate-100">
+                            <td class="py-2.5 px-3 font-semibold text-slate-700">${u.nama}</td>
+                            <td class="py-2.5 px-3 font-mono text-slate-500">@${u.username}</td>
+                            <td class="py-2.5 px-3 text-center">
+                                <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold ${u.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}">${u.role}</span>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
+            }
+
+            // 2. Tampilkan data Rekap Belanja Anggota di Dashboard Admin
+            const dashboardPesananEl = document.getElementById('admin-rekap-belanja');
+            if (dashboardPesananEl) {
+                document.getElementById('admin-orders-count').innerText = `${globalPesanan.length} Transaksi`;
+                
+                if (globalPesanan.length === 0) {
+                    dashboardPesananEl.innerHTML = `<tr><td colspan="4" class="py-10 text-center text-slate-400">Belum ada transaksi belanja.</td></tr>`;
+                } else {
+                    dashboardPesananEl.innerHTML = globalPesanan.map(p => {
+                        const tgl = new Date(p.tanggal);
+                        const fmtTgl = isNaN(tgl) ? "Baru Saja" : tgl.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
+                        return `
+                            <tr class="hover:bg-slate-50 transition-colors border-b border-slate-100">
+                                <td class="py-2.5 px-3 text-slate-400">${fmtTgl}</td>
+                                <td class="py-2.5 px-3 font-bold text-slate-800">@${p.user || p.nama}</td>
+                                <td class="py-2.5 px-3 max-w-[200px] truncate text-slate-500 font-semibold" title="${p.detail}">${p.detail}</td>
+                                <td class="py-2.5 px-3 text-right font-extrabold text-slate-900">${formatRupiah(p.total)}</td>
+                            </tr>
+                        `;
+                    }).join('');
+                }
+            }
+        }
+
+        // ─────────────────────────────────────────────
+        // ADMIN BARANG
+        // ─────────────────────────────────────────────
         const debouncedAdminSearch = debounce(() => renderAdminItems(), DEBOUNCE_DELAY);
 
         function renderAdminItems() {
@@ -1025,16 +1161,14 @@
         }
 
         // ─────────────────────────────────────────────
-        // 11. SHOP ITEMS (dengan debounce)
+        // SHOP ITEMS
         // ─────────────────────────────────────────────
-
         const debouncedShopSearch = debounce(() => renderShopItems(), DEBOUNCE_DELAY);
 
         function renderShopItems() {
             const grid = document.getElementById('shop-items-grid');
             const searchVal = document.getElementById('shop-search').value.toLowerCase();
 
-            // Category filters (Secara dinamis disesuaikan dengan isi database barang + list kategori aktif)
             const activeCategories = ['Semua', ...new Set([...globalKategori, ...globalBarang.map(b => b.kategori)])];
             const filterContainer = document.getElementById('category-filters');
             filterContainer.innerHTML = activeCategories.map(cat =>
@@ -1082,9 +1216,8 @@
         }
 
         // ─────────────────────────────────────────────
-        // 12. VIEWER ITEMS (dengan debounce)
+        // VIEWER ITEMS
         // ─────────────────────────────────────────────
-
         const debouncedViewerSearch = debounce(() => renderViewerItems(), DEBOUNCE_DELAY);
 
         function renderViewerItems() {
@@ -1118,9 +1251,8 @@
         }
 
         // ─────────────────────────────────────────────
-        // 13. CART
+        // CART
         // ─────────────────────────────────────────────
-
         function addToCart(id) {
             const b = globalBarang.find(item => item.id === id);
             if (!b) return;
@@ -1151,7 +1283,6 @@
             const totalQty = cart.reduce((s, i) => s + i.qty, 0);
             const totalVal = cart.reduce((s, i) => s + (i.harga * i.qty), 0);
 
-            // Badge
             const badge = document.getElementById('cart-badge');
             const countBadge = document.getElementById('cart-count-badge');
             if (totalQty > 0) {
@@ -1165,7 +1296,6 @@
                 if (countBadge) countBadge.innerText = "0 Item";
             }
 
-            // Desktop
             const desktopList = document.getElementById('cart-items-list');
             if (cart.length === 0) {
                 desktopList.innerHTML =
@@ -1186,7 +1316,6 @@
                 document.getElementById('cart-total').innerText = formatRupiah(totalVal);
             }
 
-            // Mobile
             const mobileList = document.getElementById('cart-mobile-items-list');
             if (cart.length === 0) {
                 mobileList.innerHTML =
@@ -1200,7 +1329,7 @@
                         <div class="flex items-center gap-1.5 bg-slate-50 p-1 rounded-xl border border-slate-200">
                             <button onclick="updateCartQty('${c.id}', -1)" class="w-6 h-6 flex items-center justify-center bg-white text-slate-600 rounded-lg text-sm font-extrabold border">-</button>
                             <span class="w-8 text-center text-xs font-bold text-slate-800">${c.qty}</span>
-                            <button onclick="updateCartQty('${c.id}', 1)" class="w-6 h-6 flex items-center justify-center bg-white text-slate-600 rounded-lg text-sm font-extrabold border">+</button>
+                            <button onclick="updateCartQty('${c.id}', 1)" class="w-6 h-6 flex items-center justify-center bg-white text-slate-600 rounded-lg text-sm font-extrabold border border-slate-200">+</button>
                         </div>
                     </div>`
                 ).join('');
@@ -1224,9 +1353,8 @@
         }
 
         // ─────────────────────────────────────────────
-        // 14. SUBMIT ORDER
+        // SUBMIT ORDER
         // ─────────────────────────────────────────────
-
         async function submitOrder() {
             if (cart.length === 0) { showToast("Keranjang Kosong", "Tambahkan barang dulu.", "warning"); return; }
             const totalVal = cart.reduce((s, i) => s + (i.harga * i.qty), 0);
@@ -1234,19 +1362,31 @@
                 `Anda akan membeli ${cart.length} produk dengan total ${formatRupiah(totalVal)}.`,
                 async () => {
                     const totalStr = formatRupiah(totalVal);
+                    const detail = cart.map(c => `• ${c.nama} (${c.qty})`).join("\n");
+                    const dateStr = new Date().toISOString().split('T')[0];
+
                     if (!WEBAPP_URL) {
-                        cart.forEach(c => { const b = globalBarang.find(item => item.id === c.id); if (b) b.stok = Math
-                                .max(0, b.stok - c.qty); });
-                        const detail = cart.map(c => `• ${c.nama} (${c.qty})`).join("\n");
-                        globalPesanan.push({ tanggal: new Date().toISOString(), user: activeUser ? activeUser
-                                .username : "demo-user", detail: detail.replace(/\n/g, ', '), total: cart.reduce((
-                                s, i) => s + (i.harga * i.qty), 0) });
+                        cart.forEach(c => { 
+                            const b = globalBarang.find(item => item.id === c.id); 
+                            if (b) b.stok = Math.max(0, b.stok - c.qty); 
+                        });
+                        
+                        const orderId = "TRX-" + Math.floor(1000 + Math.random() * 9000);
+                        globalPesanan.unshift({ 
+                            tanggal: dateStr, 
+                            user: activeUser ? activeUser.username : "demo-user", 
+                            nama: activeUser ? activeUser.username : "demo-user",
+                            detail: cart.map(c => `${c.nama} (${c.qty}x)`).join(', '), 
+                            total: totalVal
+                        });
+                        
+                        saveLocalData();
                         sendToWhatsApp(detail, totalStr);
                         cart = [];
                         renderCart();
                         toggleCartMobile(false);
                         updateAllUIs();
-                        showToast("Transaksi Sukses (Demo)", "Pesanan tercatat.", "success");
+                        showToast("Transaksi Sukses (Demo)", "Pesanan tercatat secara lokal.", "success");
                         return;
                     }
 
@@ -1255,8 +1395,7 @@
                         const payload = {
                             action: 'jual',
                             user: activeUser ? activeUser.username : 'anggota',
-                            items: cart.map(item => ({ id: item.id, nama: item.nama, qty: item.qty,
-                                harga: item.harga }))
+                            items: cart.map(item => ({ id: item.id, nama: item.nama, qty: item.qty, harga: item.harga }))
                         };
 
                         const res = await fetch(`${WEBAPP_URL}`, {
@@ -1265,18 +1404,16 @@
                         });
                         const txt = await res.text();
                         if (txt === "Berhasil") {
-                            const detail = cart.map(c => `• ${c.nama} (${c.qty})`).join("\n");
                             sendToWhatsApp(detail, totalStr);
                             cart = [];
                             renderCart();
                             toggleCartMobile(false);
                             showToast("Transaksi Berhasil!", "Pembelian dicatat di spreadsheet.", "success");
-                            setTimeout(fetchData, 1000);
+                            setTimeout(() => fetchData(true), 1000);
                         } else {
                             showToast("Checkout Gagal", txt, "error");
                         }
-                    } catch (e) { showToast("Error Koneksi", "Gagal memproses transaksi.", "error"); } finally { setLoader(
-                            false); }
+                    } catch (e) { showToast("Error Koneksi", "Gagal memproses transaksi.", "error"); } finally { setLoader(false); }
                 }
             );
         }
@@ -1285,23 +1422,21 @@
             let msg =
                 `*KOPERASI MANDIRI DIGITAL*\n============================\n*Detail Pesanan Anggota:*\nPengirim: ${activeUser ? activeUser.nama : "Anggota Koperasi"}\n\n${detailText}\n\n*Total Pembayaran:* ${totalText}\n============================\n_Mohon segera diproses. Terima kasih!_`;
             const waNumbers = WA_ADMIN.split(',').map(n => n.trim()).filter(n => n.length > 0);
-            const target = waNumbers.length > 0 ? waNumbers[Math.floor(Math.random() * waNumbers.length)] :
-            "6285123456789";
+            const target = waNumbers.length > 0 ? waNumbers[Math.floor(Math.random() * waNumbers.length)] : "6285123456789";
             window.open(`https://api.whatsapp.com/send?phone=${target}&text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         // ─────────────────────────────────────────────
-        // 15. USULAN
+        // USULAN
         // ─────────────────────────────────────────────
-
         async function handleSaveUsulan() {
             const nama = document.getElementById('usul-nama').value.trim();
             const keterangan = document.getElementById('usul-keterangan').value.trim();
             if (!nama || !keterangan) { showToast("Form Kosong", "Isi nama dan alasan usulan.", "warning"); return; }
 
             if (!WEBAPP_URL) {
-                globalUsulan.unshift({ tanggal: new Date().toISOString(), user: activeUser ? activeUser.username :
-                        "budi", nama, keterangan, status: "Pending" });
+                globalAspirasi.unshift({ tanggal: new Date().toISOString(), user: activeUser ? activeUser.username : "budi", nama, keterangan, status: "Pending" });
+                saveLocalData();
                 showToast("Usulan Disimpan", "Usulan disimpan (Mode Demo).", "success");
                 document.getElementById('usul-nama').value = '';
                 document.getElementById('usul-keterangan').value = '';
@@ -1313,38 +1448,36 @@
             try {
                 const res = await fetch(`${WEBAPP_URL}`, {
                     method: 'POST',
-                    body: JSON.stringify({ action: 'saveUsulan', user: activeUser ? activeUser.username : 'anggota',
-                        nama, keterangan })
+                    body: JSON.stringify({ action: 'saveUsulan', user: activeUser ? activeUser.username : 'anggota', nama, keterangan })
                 });
                 const txt = await res.text();
                 if (txt === "Usulan Berhasil Disimpan") {
                     showToast("Usulan Dikirim", "Usulan berhasil diajukan.", "success");
                     document.getElementById('usul-nama').value = '';
                     document.getElementById('usul-keterangan').value = '';
-                    fetchData();
+                    fetchData(true);
                 } else { showToast("Gagal", txt, "error"); }
             } catch (e) { showToast("Kesalahan Jaringan", "Gagal mengirim usulan.", "error"); } finally { setLoader(false); }
         }
 
         function renderUsulanTable() {
             const list = document.getElementById('usulan-list');
-            if (globalUsulan.length === 0) {
+            if (globalAspirasi.length === 0) {
                 list.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-slate-400">Belum ada usulan.</td></tr>`;
                 return;
             }
             let html = '';
-            globalUsulan.forEach(u => {
+            globalAspirasi.forEach(u => {
                 const tgl = new Date(u.tanggal);
-                const fmt = isNaN(tgl) ? "Baru Saja" : tgl.toLocaleDateString('id-ID', { day: 'numeric',
-                    month: 'short', year: 'numeric' });
+                const fmt = isNaN(tgl) ? "Baru Saja" : tgl.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
                 let cls = 'bg-amber-100 text-amber-800';
                 if (u.status === 'Disetujui') cls = 'bg-emerald-100 text-emerald-800';
                 if (u.status === 'Ditolak') cls = 'bg-rose-100 text-rose-800';
-                html += `<tr class="hover:bg-slate-50">
+                html += `<tr class="hover:bg-slate-50 border-b border-slate-100">
                     <td class="py-3 px-5 text-slate-400">${fmt}</td>
                     <td class="py-3 px-5 font-semibold text-slate-800">@${u.user}</td>
                     <td class="py-3 px-5 font-bold text-slate-950">${u.nama}</td>
-                    <td class="py-3 px-5 max-w-xs truncate" title="${u.keterangan}">${u.keterangan}</td>
+                    <td class="py-3 px-5 max-w-xs truncate text-slate-500" title="${u.keterangan}">${u.keterangan}</td>
                     <td class="py-3 px-5 text-center"><span class="inline-flex px-2 py-0.5 rounded text-[10px] font-extrabold uppercase ${cls}">${u.status || 'Pending'}</span></td>
                 </tr>`;
             });
@@ -1352,9 +1485,8 @@
         }
 
         // ─────────────────────────────────────────────
-        // 16. AUTHENTICATION
+        // AUTHENTICATION
         // ─────────────────────────────────────────────
-
         function toggleAuthTab(tab) {
             const btnLogin = document.getElementById('tab-btn-login');
             const btnRegister = document.getElementById('tab-btn-register');
@@ -1386,11 +1518,10 @@
             document.getElementById('main-app').classList.add('hidden');
         }
 
-        // Simpan sesi login ke Local Storage & Session Storage agar tidak keluar otomatis saat di-refresh
         function loginSuccess(user) {
             activeUser = user;
             sessionStorage.setItem('currentUser', JSON.stringify(user));
-            localStorage.setItem('cachedUserPersistent', JSON.stringify(user)); // Sesi persisten di device
+            localStorage.setItem('cachedUserPersistent', JSON.stringify(user));
             
             document.getElementById('auth-container').classList.add('hidden');
             document.getElementById('main-app').classList.remove('hidden');
@@ -1398,8 +1529,15 @@
             document.getElementById('profile-role').innerText = user.role;
             document.getElementById('welcome-user').innerText = user.nama;
 
-            const adminMenu = document.getElementById('admin-menu');
-            adminMenu.classList.toggle('hidden', user.role !== 'admin');
+            // Kontrol penampakan Roster & Rekap di Dashboard untuk admin
+            const dashboardAdminSection = document.getElementById('dashboard-admin-section');
+            if (user.role === 'admin') {
+                document.getElementById('admin-menu').classList.remove('hidden');
+                if (dashboardAdminSection) dashboardAdminSection.classList.remove('hidden');
+            } else {
+                document.getElementById('admin-menu').classList.add('hidden');
+                if (dashboardAdminSection) dashboardAdminSection.classList.add('hidden');
+            }
 
             showPage('dashboard');
             showToast("Masuk Berhasil", `Selamat datang, ${user.nama}!`, "success");
@@ -1415,7 +1553,7 @@
             }
 
             if (!WEBAPP_URL) {
-                const found = MOCK_USERS.find(u => u.username === user);
+                const found = globalPengguna.find(u => u.username === user.toLowerCase());
                 if (found && pass === user + '123') {
                     loginSuccess(found);
                 } else {
@@ -1450,7 +1588,7 @@
 
         async function handleRegister() {
             const nama = document.getElementById('reg-name').value.trim();
-            const user = document.getElementById('reg-username').value.trim();
+            const user = document.getElementById('reg-username').value.trim().toLowerCase();
             const pass = document.getElementById('reg-password').value.trim();
             if (!nama || !user || !pass) { 
                 showToast("Form Belum Lengkap", "Harap isi semua kolom pendaftaran.", "warning"); 
@@ -1459,12 +1597,18 @@
             }
 
             if (!WEBAPP_URL) {
-                MOCK_USERS.push({ nama, username: user, role: "user" });
+                if (globalPengguna.some(u => u.username === user)) {
+                    showToast("Username Duplikat", "Username tersebut sudah digunakan.", "warning");
+                    triggerAuthShake();
+                    return;
+                }
+                globalPengguna.push({ nama, username: user, role: "user", password: pass });
+                globalTotalAnggota = globalPengguna.length;
+                saveLocalData();
                 showToast("Pendaftaran Berhasil!", `Anggota @${user} berhasil terdaftar di sistem (Demo). Silakan masuk!`, "success");
                 
-                // Isi username pendaftaran ke input login secara otomatis
                 document.getElementById('login-username').value = user;
-                document.getElementById('login-password').value = '';
+                document.getElementById('login-password').value = pass;
                 
                 toggleAuthTab('login');
                 document.getElementById('login-password').focus();
@@ -1475,15 +1619,15 @@
             try {
                 const res = await fetch(`${WEBAPP_URL}`, {
                     method: 'POST',
+                    headers: { 'Content-Type': 'text/plain' },
                     body: JSON.stringify({ action: 'register', nama, username: user, password: pass })
                 });
                 const txt = await res.text();
                 if (txt === "Berhasil") { 
                     showToast("Pendaftaran Berhasil!", `Anggota baru @${user} sukses terdaftar. Selamat bergabung!`, "success");
                     
-                    // Isi username pendaftaran ke input login secara otomatis
                     document.getElementById('login-username').value = user;
-                    document.getElementById('login-password').value = '';
+                    document.getElementById('login-password').value = pass;
                     
                     toggleAuthTab('login');
                     document.getElementById('login-password').focus();
@@ -1506,14 +1650,13 @@
                 activeUser = null;
                 cart = [];
                 showAuthWrapper();
-                showToast("Sesi Berakhir", "Anda telah keluar aplikasi.", "info");
+                showToast("Sesi Berakhir", "Anda telah keluar dengan aman.", "info");
             });
         }
 
         // ─────────────────────────────────────────────
-        // 17. PAGE ROUTING
+        // PAGE ROUTING
         // ─────────────────────────────────────────────
-
         function showPage(id) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active'));
@@ -1524,8 +1667,14 @@
             const btn = document.getElementById('nav-' + id);
             if (btn) btn.classList.add('nav-active');
 
-            const titles = { dashboard: 'Dashboard Ringkasan', barang: 'Kelola Inventori Barang', pesan: 'Katalog Belanja Anggota',
-                'lihat-stok': 'Cek Stok Koperasi', usulan: 'Usulan Pengadaan Barang', settings: 'Pengaturan Sistem Koperasi' };
+            const titles = { 
+                dashboard: 'Dashboard Ringkasan', 
+                barang: 'Kelola Inventori Barang', 
+                pesan: 'Katalog Belanja Anggota',
+                'lihat-stok': 'Cek Stok Koperasi', 
+                usulan: 'Usulan Pengadaan Barang', 
+                settings: 'Pengaturan Sistem Koperasi' 
+            };
             document.getElementById('page-title').innerText = titles[id] || 'Dashboard';
 
             if (id === 'settings') {
@@ -1544,13 +1693,10 @@
         }
 
         // ─────────────────────────────────────────────
-        // 18. MODAL BARANG (ADMIN)
+        // MODAL BARANG
         // ─────────────────────────────────────────────
-
         function openFormBarang(id = '') {
             const modal = document.getElementById('modal-barang');
-            
-            // Render Pilihan Kategori secara Dinamis ke Elemen Dropdown
             populateCategoryDropdown();
 
             document.getElementById('barang-id').value = id;
@@ -1558,7 +1704,6 @@
             document.getElementById('barang-harga').value = '';
             document.getElementById('barang-stok').value = '';
             
-            // Set kategori default ke nilai pertama dari list kustom
             if (globalKategori.length > 0) {
                 document.getElementById('barang-kategori').value = globalKategori[0];
             }
@@ -1604,6 +1749,7 @@
                     globalBarang.push({ id: newId, nama, kategori, harga, stok });
                     showToast("Barang Ditambahkan", "Barang baru ditambahkan (Mode Demo).", "success");
                 }
+                saveLocalData();
                 closeFormBarang();
                 updateAllUIs();
                 return;
@@ -1613,12 +1759,13 @@
             try {
                 const res = await fetch(`${WEBAPP_URL}`, {
                     method: 'POST',
+                    headers: { 'Content-Type': 'text/plain' },
                     body: JSON.stringify({ action: "saveBarang", id, nama, kategori, harga, stok })
                 });
                 const txt = await res.text();
                 if (txt === "Berhasil") { showToast("Berhasil", "Data barang disimpan.", "success");
                     closeFormBarang();
-                    fetchData(); } else showToast("Gagal", txt, "error");
+                    fetchData(true); } else showToast("Gagal", txt, "error");
             } catch (e) { showToast("Gagal Menyimpan", "Koneksi terputus.", "error"); } finally { setLoader(false); }
         }
 
@@ -1626,25 +1773,28 @@
             openConfirmModal("Hapus Barang?", `Hapus barang ID ${id}?`, async () => {
                 if (!WEBAPP_URL) {
                     globalBarang = globalBarang.filter(b => b.id !== id);
+                    saveLocalData();
                     showToast("Dihapus", "Barang dihapus (Mode Demo).", "success");
                     updateAllUIs();
                     return;
                 }
                 setLoader(true, "Menghapus...");
                 try {
-                    const res = await fetch(`${WEBAPP_URL}`, { method: 'POST', body: JSON.stringify({ action: "deleteBarang",
-                            id }) });
+                    const res = await fetch(`${WEBAPP_URL}`, { 
+                        method: 'POST', 
+                        headers: { 'Content-Type': 'text/plain' },
+                        body: JSON.stringify({ action: "deleteBarang", id }) 
+                    });
                     const txt = await res.text();
                     if (txt === "Berhasil") { showToast("Dihapus", "Barang dihapus.", "success");
-                        fetchData(); } else showToast("Gagal", txt, "error");
+                        fetchData(true); } else showToast("Gagal", txt, "error");
                 } catch (e) { showToast("Gagal", "Koneksi terputus.", "error"); } finally { setLoader(false); }
             });
         }
 
         // ─────────────────────────────────────────────
-        // 19. SETTINGS & KATEGORI MANAJEMEN
+        // SETTINGS & KATEGORI MANAJEMEN
         // ─────────────────────────────────────────────
-
         function initSettingsUI() {
             document.getElementById('input-webapp-url').value = WEBAPP_URL;
             document.getElementById('input-wa-admin').value = WA_ADMIN;
@@ -1660,20 +1810,20 @@
             toggleDemoModeBanner(!url);
             showToast("Pengaturan Disimpan", "Konfigurasi baru diterapkan.", "success");
             clearCache();
-            fetchData(true);
+            fetchCloudData(true);
         }
 
         function resetSettingsToDefault() {
             openConfirmModal("Kembalikan Pengaturan?", "Reset ke URL bawaan?", () => {
-                WEBAPP_URL = DEFAULT_WEBAPP_URL;
+                WEBAPP_URL = HARDCODED_WEBAPP_URL;
                 WA_ADMIN = "6285123456789";
-                localStorage.setItem('webapp_url', DEFAULT_WEBAPP_URL);
+                localStorage.setItem('webapp_url', HARDCODED_WEBAPP_URL);
                 localStorage.setItem('wa_admin', "6285123456789");
                 initSettingsUI();
                 toggleDemoModeBanner(false);
                 clearCache();
                 showToast("Dipulihkan", "Pengaturan bawaan aktif.", "info");
-                fetchData(true);
+                fetchCloudData(true);
             });
         }
 
@@ -1681,7 +1831,6 @@
             document.getElementById('demo-banner').classList.toggle('hidden', !show);
         }
 
-        // Render list kategori di menu pengaturan
         function renderCategorySettings() {
             const container = document.getElementById('category-list-settings');
             if (!container) return;
@@ -1705,7 +1854,6 @@
             }
         }
 
-        // Tambah Kategori baru secara manual
         function addNewCategory() {
             const input = document.getElementById('input-new-category');
             const name = input.value.trim();
@@ -1725,7 +1873,6 @@
             showToast("Kategori Ditambahkan", `Kategori "${name}" berhasil ditambahkan secara manual.`, "success");
         }
 
-        // Hapus Kategori manual
         function deleteCategory(name) {
             openConfirmModal(
                 "Hapus Kategori?",
@@ -1740,7 +1887,6 @@
             );
         }
 
-        // Sinkronisasi kategori ke dalam elemen select di modal barang
         function populateCategoryDropdown() {
             const select = document.getElementById('barang-kategori');
             if (!select) return;
@@ -1748,9 +1894,8 @@
         }
 
         // ─────────────────────────────────────────────
-        // 20. CONFIRM MODAL
+        // CONFIRM MODAL
         // ─────────────────────────────────────────────
-
         function openConfirmModal(title, message, onConfirm) {
             const modal = document.getElementById('modal-confirm');
             document.getElementById('confirm-title').innerText = title;
@@ -1764,16 +1909,13 @@
         }
 
         // ─────────────────────────────────────────────
-        // 21. INIT
+        // INIT
         // ─────────────────────────────────────────────
-
-        // Event binding dengan debounce untuk search input
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof lucide !== 'undefined' && lucide.createIcons) {
                 lucide.createIcons();
             }
 
-            // Search dengan debounce
             document.getElementById('admin-search').addEventListener('input', debouncedAdminSearch);
             document.getElementById('shop-search').addEventListener('input', debouncedShopSearch);
             document.getElementById('viewer-search').addEventListener('input', debouncedViewerSearch);
@@ -1796,14 +1938,19 @@
             const cached = getCached('allData');
             if (cached) {
                 globalBarang = cached.barang || [];
-                globalUsulan = cached.usulan || [];
+                globalAspirasi = cached.usulan || [];
                 globalPesanan = cached.pesanan || [];
                 globalTotalAnggota = cached.totalAnggota || 0;
+                globalPengguna = cached.pengguna || [];
                 updateAllUIs();
                 // refresh di background
                 if (WEBAPP_URL) refreshDataInBackground();
             } else {
-                fetchData();
+                if (WEBAPP_URL) {
+                    fetchCloudData();
+                } else {
+                    renderAll();
+                }
             }
         });
 
